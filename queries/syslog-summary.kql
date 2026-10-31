@@ -1,0 +1,6 @@
+Syslog
+| where TimeGenerated > ago(1h)
+| where Computer =~ "vm-lab07-monitor"
+| where SyslogMessage contains "LAB07_POST_BICEP"
+| summarize Events=count() by bin(TimeGenerated, 5m), SeverityLevel
+| order by TimeGenerated asc, SeverityLevel asc

@@ -1,0 +1,4 @@
+Heartbeat
+| where TimeGenerated > ago(30m)
+| where Computer =~ "vm-lab07-monitor"
+| summarize LastHeartbeat=max(TimeGenerated) by Computer, OSType, Version

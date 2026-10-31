@@ -1,0 +1,6 @@
+Syslog
+| where TimeGenerated > ago(30m)
+| where Computer =~ "vm-lab07-monitor"
+| where SyslogMessage contains "LAB07_POST_BICEP"
+| project TimeGenerated, Computer, Facility, SeverityLevel, SyslogMessage
+| order by TimeGenerated desc

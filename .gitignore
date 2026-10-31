@@ -1,0 +1,10 @@
+# Private input and generated files
+*.parameters.json
+*.bicepparam
+*.pem
+*.key
+*.pub
+.env*
+bicep/*.json
+evidence/
+.runtime/
